@@ -1,0 +1,31 @@
+{
+    "dominos":[
+        {
+            "top":"a",
+            "bot":"aba"
+
+        },
+        {
+            "top":"bba",
+            "bot":"ab"
+
+        },
+        {
+            "top":"ab",
+            "bot":"aaa"
+
+        },
+        {
+            "top":"aab",
+            "bot":"ba"
+
+        },
+        {
+            "top":"ba",
+            "bot":"bba"
+
+        }
+
+    ],
+    "goodorder":"0142" 
+}

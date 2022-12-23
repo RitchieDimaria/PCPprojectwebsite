@@ -1,0 +1,115 @@
+* {
+    margin:0;
+    padding:0;
+
+}
+
+html,body{
+    height:100%;
+    font-family: "Lucia Sans", "Lucida Sans Regular", "lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#container {
+    display:flex;
+    background-color:black;
+    height:100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    border-bottom:1px solid rgb(58,58,60);
+
+}
+.title {
+    color: gainsboro;
+    font-size:2.5rem;
+    font-weight:bold;
+    margin:0.4rem 0 0.4rem 0;
+    text-align:center;
+    font-family: "Lucia Sans", "Lucida Sans Regular", "lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.win {
+    color:green;
+}
+
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow:hidden;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing:border-box;
+}
+
+.square {
+    border: 2px solid rgb(58,58,60);
+    min-width: 80px;
+    min-height:120px;
+    font-size:1.5rem;
+    font-weight: bold;
+    color: aliceblue;
+}
+.domino-square {
+    min-width: 80px;
+    min-height:120px;
+    font-size:1.5rem;
+    font-weight: bold;
+    background-color:whitesmoke;
+}
+
+#keyboard-container {
+    height:200px;
+}
+
+.keyboard {
+    display: flex;
+    justify-content: center;
+    width:100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+.verify {
+    display: flex;
+    justify-content: center;
+    width:33%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+
+.keyboard button{
+    font-family: inherit;
+    font-weight:bold;
+    min-width: 80px;
+    min-height:120px;
+    font-size:2rem;
+    font-weight: bold;
+    cursor:pointer;
+    background-color: rgb(129,131,132);
+    flex-grow: 1;
+    text-transform: lowercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.verify button {
+    font-family: inherit;
+    font-weight:bold;
+    font-size:2rem;
+    font-weight: bold;
+    cursor:pointer;
+    background-color: rgb(129,131,132);
+    flex-grow:1.5;
+}
