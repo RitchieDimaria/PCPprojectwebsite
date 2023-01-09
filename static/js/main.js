@@ -1,9 +1,12 @@
+const currOrder = [];
+
 document.addEventListener("DOMContentLoaded", () => {
     createSquares();
     createDominos();
 
-    const currOrder = [];
+    
     const goodOrder = ["0","1","3","3","2"]
+
 
     const keys=document.querySelectorAll('.keyboard-container div button')
 
@@ -21,20 +24,35 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(key);
         }
     }
-
-
+    
+    
+    function removeDomino() {
+        let dom = document.getElementById("placedDominoId"+(currOrder.length-1));
+        currOrder.pop()
+        console.log(currOrder.length);
+        console.log(dom);
+        dom.remove()
+    }
     function addDomino(key) {
-        const selDom = document.getElementById("iddom"+key);
+        if(currOrder.length <6) {
+            const selDom = document.getElementById("iddom"+key);
 
-        const selSquare = document.getElementById("idsq"+currOrder.length);
-        let dom = document.createElement("button");
-        dom.setAttribute("class","domino-square");
-        dom.innerHTML = selDom.innerHTML
+            const selSquare = document.getElementById("idsq"+currOrder.length);
+            let dom = document.createElement("button");
+            dom.setAttribute("class","domino-square");
+            dom.setAttribute("id","placedDominoId"+currOrder.length)
+            dom.addEventListener('click', removeDomino);
+            dom.innerHTML = selDom.innerHTML
 
-        currOrder.push(key);
-        console.log(selDom);
+            currOrder.push(key);
+            console.log(selDom);
 
-        selSquare.appendChild(dom);
+            selSquare.appendChild(dom);
+        }
+        else
+        {
+            console.log("Only 6 dominos are allowed")
+        }
 
     }
 
@@ -73,7 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
             let setdomino = document.createElement("button");
             setdomino.setAttribute("id","iddom"+i);
             setdomino.setAttribute("data-key",i)
-            setdomino.innerHTML = "hehe <br> dom"+i
+
+            setdomino.innerHTML = "hehe <br> dom"+i 
+
             dominogrid.appendChild(setdomino);
         }
 
